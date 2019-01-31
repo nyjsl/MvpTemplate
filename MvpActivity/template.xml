@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="MvpActivity"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new empty mvp activity">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+
+    <parameter
+        id="activityName"
+        name="MVP Name"
+        type="string"
+        constraints="nonempty"
+        default="MVP"
+        help="The name of the MVP class to create" />
+    <parameter
+        id="activityClass"
+        name="MVPActivity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${activityName}Activity"
+        default="MainActivity"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="base"
+        name="is base activity"
+        type="boolean"
+        default="false"
+        help="If true, set to abstract base activity" />
+
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        visibility="!base"
+        default="true"
+        help="If true, a layout file will be generated" />
+    <parameter
+        id="ptr"
+        name="Generate Pull To Refresh"
+        type="boolean"
+        default="false"
+        help="If true, Pull To Refresh will be generated" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityName)}"
+        default="activity_main"
+        visibility="generateLayout"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="contractName"
+        name="MVP Contract"
+        type="string"
+        suggest="I${activityName}ActivityContract"
+        visibility="!base"
+        help="The name of the contract to create for the activity" />
+    <parameter
+        id="presenterName"
+        name="MVP Presenter"
+        visibility="!base"
+        type="string"
+        suggest="${activityName}ActivityPresenter"
+        help="The name of the presenter to create for the activity" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

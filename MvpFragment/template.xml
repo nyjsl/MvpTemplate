@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="MvpFragment"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new empty mvp Fragment">
+
+    <category value="Fragment" />
+
+
+    <parameter
+        id="fragmentName"
+        name="MVP Name"
+        type="string"
+        constraints="nonempty"
+        default="MVP"
+        help="The name of the MVP class to create" />
+    <parameter
+        id="fragmentClass"
+        name="MVPActivity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${fragmentName}Fragment"
+        default="MainActivity"
+        help="The name of the fragment class to create" />
+    <parameter
+        id="base"
+        name="is base fragment"
+        type="boolean"
+        default="false"
+        help="If true, set to abstract base fragment" />
+
+    <parameter
+        id="lazy"
+        name="is lazy fragment"
+        type="boolean"
+        default="false"
+        help="If true, set to lazy fragment" />
+
+     <parameter
+        id="ptr"
+        name="is Pull To Refresh"
+        type="boolean"
+        default="false"
+        help="If true, Pull to Refresh will be generated" />
+   
+
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="fragment_${classToResource(fragmentName)}"
+        default="fragment_main"
+        visibility="generateLayout"
+        help="The name of the layout to create for the fragment" />
+
+    <parameter
+        id="contractName"
+        name="MVP Contract"
+        type="string"
+        suggest="I${fragmentName}FragmentContract"
+        help="The name of the contract to create for the fragment" />
+        <parameter
+        id="presenterName"
+        name="MVP Presenter"
+        type="string"
+        suggest="${fragmentName}FragmentPresenter"
+        help="The name of the presenter to create for the fragment" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
