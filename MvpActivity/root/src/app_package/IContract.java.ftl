@@ -2,8 +2,8 @@
 <#if ptr>
 
 package ${packageName};
-import com.cw.common.component.mvp.ptr.BasePtrPresenter;
-import com.cw.common.component.mvp.ptr.IBasePtrView;
+import com.cw.base.component.mvp.ptr.BasePtrPresenter;
+import com.cw.base.component.mvp.ptr.IBasePtrView;
 
 import io.reactivex.Observable;
 
@@ -25,8 +25,8 @@ public interface ${contractName} {
 <#else>
 
 package ${packageName};
-import com.cw.common.component.mvp.BasePresenter;
-import com.cw.common.component.IBaseView;
+import com.cw.base.component.mvp.BasePresenter;
+import com.cw.base.component.mvp.IBaseView;
 import ${packageName}.${activityClass};
 
 public interface ${contractName} {

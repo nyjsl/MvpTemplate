@@ -2,7 +2,7 @@
 
 package ${packageName};
 
-import com.cw.common.net.base.BasePagableReq;
+import com.cw.base.net.base.BasePagableReq;
 import ${packageName}.${contractName};
 
 public class ${presenterName} extends ${contractName}.Presenter {

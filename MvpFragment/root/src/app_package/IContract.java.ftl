@@ -2,8 +2,8 @@
 <#if ptr>
 
 package ${packageName};
-import com.cw.common.component.mvp.ptr.BasePtrPresenter;
-import com.cw.common.component.mvp.ptr.IBasePtrView;
+import com.cw.base.component.mvp.ptr.BasePresenter;
+import  com.cw.base.component.mvp.ptr.IBasePtrView;
 
 import io.reactivex.Observable;
 

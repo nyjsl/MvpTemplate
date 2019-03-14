@@ -4,9 +4,9 @@
 <#if base>
 
 package ${packageName};
-import com.cw.common.component.mvp.ptr.Base<#if lazy>Lazy</#if>PtrMvpFragment;
-import com.cw.common.component.mvp.ptr.BasePtrPresenter;
-import com.cw.common.component.mvp.ptr.IBasePtrView;
+import com.cw.base.component.mvp.ptr.Base<#if lazy>Lazy</#if>PtrMvpFragment;
+import com.cw.base.component.mvp.ptr.BasePtrPresenter;
+import com.cw.base.component.mvp.ptr.IBasePtrView;
 import com.cw.ui.BaseLoadMoreView;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import android.os.Bundle;
@@ -60,8 +60,8 @@ package ${packageName};
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.loadmore.LoadMoreView;
-import com.cw.common.component.mvp.pfactory.annotations.CreatePresenterAnnotation;
-import com.cw.common.component.mvp.ptr.Base<#if lazy>Lazy</#if>PtrMvpFragment;
+import com.cw.base.component.mvp.pfactory.annotations.CreatePresenterAnnotation;
+import com.cw.base.component.mvp.ptr.Base<#if lazy>Lazy</#if>PtrMvpFragment;
 import com.cw.global.constants.router.RouterPath;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.List;
